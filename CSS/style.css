@@ -1,0 +1,363 @@
+ /*principal*/
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f0f0f;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between; /* Espaço entre links e barra de pesquisa */
+    align-items: center; /* Alinha verticalmente os itens */
+    padding: 10px 20px;
+    background: linear-gradient(rgb(255, 0, 0), rgb(197, 18, 18), rgba(77, 23, 23, 0.555));
+}
+
+header img {
+    width: 5em; /* Tamanho do logo */
+}
+
+/* Links do Menu */
+header nav {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os links */
+}
+
+header a {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: rgb(255, 255, 255);
+}
+
+/* Barra de Pesquisa */
+.barraPesquisa {
+    display: flex;
+    align-items: center; /* Alinha verticalmente os itens */
+    gap: 5px; /* Espaçamento entre o input e o botão */
+}
+
+.barraPesquisa input[type="search"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 4px 0 0 4px; /* Bordas arredondadas na esquerda */
+    outline: none;
+}
+
+.barraPesquisa button {
+    padding: 10px 20px;
+    background-color: #8d0f0f;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 0 4px 4px 0; /* Bordas arredondadas na direita */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.barraPesquisa button:hover {
+    background-color: #ff0000;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Empilha itens no header */
+        align-items: center;
+        gap: 15px;
+    }
+
+    header nav {
+        justify-content: center; /* Centraliza os links */
+    }
+
+    .barraPesquisa {
+        justify-content: center; /* Centraliza a barra de pesquisa */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .barraPesquisa input[type="search"] {
+        width: 100%; /* Input ocupa toda a largura disponível */
+        border-radius: 4px; /* Remove bordas arredondadas laterais */
+    }
+
+    .barraPesquisa button {
+        width: 100%; /* Botão ocupa toda a largura disponível */
+        border-radius: 4px; /* Remove bordas arredondadas laterais */
+    }
+}
+
+
+#menu{
+    background-color: rgb(251, 255, 0);
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    
+    
+}
+.menu2{
+    display: none;
+}
+
+section h1{
+    color: yellow;
+    text-align: center;
+    font-size: 300%;
+    margin-top: 2%;
+}
+
+main h1{
+    color: yellow;
+    text-align: justify;
+    padding-left: 131px;
+}
+
+ /*slide show*/
+
+.slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.slideshow{
+    position: relative;
+    width: 70%; /* Ocupa quase toda a largura da tela */
+    max-width: 800px;
+    overflow: hidden;
+    transform: scale(1.5);
+    border-radius: 20px;
+}
+
+.slideshow ul{
+    display: flex;
+    position: relative;
+    left: 0;
+    width: 400%;
+    transition: left .3s linear;
+    animation: slide 15s infinite;
+    padding: 0;
+    margin: 0;
+}
+
+.slideshow ul li{
+    display: inline-block;
+    height: auto;
+    width: 800px;
+    list-style: none;
+}
+
+.imagem{
+    margin: 0 auto;
+    padding: 0;
+    width: 90%;
+    
+}
+
+.imagem img{
+    max-width: 100%;
+    width: 800px;  
+    
+}
+
+@keyframes slide{
+    20%{
+        left: 0;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    70%{
+        left: -200%;
+    }
+    75%{
+        left: -300%;
+    }
+    98%{
+        left: -300%;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+.corpo{
+    margin: auto;
+    max-width: 1200px;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    border: solid yellow;
+    border-radius: 25px;
+    background-color: #141414;
+}
+
+/*carrossel 01*/
+
+.carrossel-container {
+    display: flex; /* Permite alinhamento flexível */
+  justify-content: center; /* Centraliza horizontalmente */
+  position: relative; /* Permite ajustar em relação à tela */
+  top: 178px; /* Posiciona no meio da tela verticalmente */
+  left: 50%; /* Posiciona no meio da tela horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta para alinhar o centro exato */
+  width: 88%; /* Define a largura do carrossel */
+  max-width: 1500px; /* Limita a largura máxima */
+  overflow: hidden; /* Oculta conteúdo que transborda */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 10px;
+}
+  
+.carrossel {
+    overflow: hidden;
+    width: 100%;
+}
+  
+.fotos {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+  
+.fotos img {
+    width: 200px;
+    height: 320px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+  
+.botao {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+  
+.botao.esquerdo {
+    left: 10px;
+}
+  
+.botao.direito {
+    right: 10px;
+}
+  
+.botao:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/*carrossel 02*/
+
+.carrossel-container2 {
+     display: flex; /* Permite alinhamento flexível */
+  justify-content: center; /* Centraliza horizontalmente */
+  position: relative; /* Permite ajustar em relação à tela */
+  top: 178px; /* Posiciona no meio da tela verticalmente */
+  left: 50%; /* Posiciona no meio da tela horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta para alinhar o centro exato */
+  width: 88%; /* Define a largura do carrossel */
+  max-width: 1500px; /* Limita a largura máxima */
+  overflow: hidden; /* Oculta conteúdo que transborda */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 10px;
+}
+  
+.carrossel2 {
+    overflow: hidden;
+    width: 100%;
+}
+  
+.fotos2 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+  
+.fotos2 img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+  
+.botao2 {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+  
+.botao.esquerdo2 {
+    left: 10px;
+}
+  
+.botao.direito2 {
+    right: 10px;
+}
+  
+.botao:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.videos{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#video01{
+    padding-left: 20px;
+}
+#video02{
+    padding-left: 20px;
+}
+#video03{
+    padding-left: 20px;
+}
+
+footer{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+/*aparecer com o tamanho*/
+  
+@media screen and (min-width: 768px) {
+    #menu2 {
+        display: flex !important;
+    }
+}
+
+#menu2 {
+    display: none; /* Esconde o menu por padrão */
+    flex-direction: row;
+    gap: 10px;
+}
